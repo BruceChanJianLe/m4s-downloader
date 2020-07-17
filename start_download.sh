@@ -23,7 +23,7 @@ if [ -z $url ]
 then
     echo "Skip init download."
 else
-    wget -O init.mp4 $url &
+    wget -O init.mp4 $url
 fi
 
 echo -e "----------------------\n"
@@ -39,7 +39,7 @@ then
     echo "Skipping segs downloading."
 else
     for i in $(seq $start_num $end_num); do
-        wget -O seg-$i.m4s $front$i$back &
+        wget -O seg-$i.m4s $front$i$back
     done
 fi
 
