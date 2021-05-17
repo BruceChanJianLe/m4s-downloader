@@ -6,15 +6,13 @@ This is a simple m4s downloader which assumes that mp4 is split into segments in
 
 - Obtain the url for init mp4 segment
 
+This url usual is called `index.m3u8` or has the extension of `m3u8`.
+
 **Step 2**
-
-- Obtain the url for other segments
-
-**Step 3**
 
 - Run the script `start_download.sh`
 
-**Step 4**
+**Step 3**
 
 - Provide the output name for the downloaded mp4
 
