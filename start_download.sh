@@ -43,7 +43,8 @@ echo -e "Combining into target"
 read -p "target name: " target
 
 combine_command=`ls -vx seg-*.m4s`
-cat init.mp4 $combine_command > ../$target.mp4
+# cat init.mp4 $combine_command > ../$target.mp4
+cat $combine_command > ../$target.mp4
 
 # https://stackoverflow.com/questions/23485759/combine-mpeg-dash-segments-ex-init-mp4-segments-m4s-back-to-a-full-source-m
 # https://www.youtube.com/watch?v=8hiuDlrWBz0
