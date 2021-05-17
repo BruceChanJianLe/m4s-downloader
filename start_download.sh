@@ -27,21 +27,16 @@ else
 fi
 
 echo -e "----------------------\n"
-echo -e "Now we download the segments, please provide the url in the form of front and back"
-read -p "link_front: " front
-read -p "link_back: " back
-read -p "start_num: " start_num
-read -p "end_num: " end_num
+echo -e "Now we download the segments from the init file"
 
-# Skip downloading step if all are empty
-if [ -z $front ] && [ -z $back ] && [ -z $start_num ] && [ -z $end_num ]
-then
-    echo "Skipping segs downloading."
-else
-    for i in $(seq $start_num $end_num); do
-        wget -O seg-$i.m4s $front$i$back
-    done
-fi
+i=1
+while read -r line; do
+    if [[ $line =~ ^http.+$ ]]
+    then
+        wget -O  seg-$i.m4s $line
+        let "i+=1"
+    fi
+done < init.mp4
 
 echo -e "----------------------\n"
 echo -e "Combining into target"
