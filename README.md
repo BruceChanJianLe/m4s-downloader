@@ -2,6 +2,8 @@
 
 This is a simple m4s downloader which assumes that mp4 is split into segments instead of audio and video.
 
+This is the others brand, which assumes that the links for the video is given in the `m3u8` file.
+
 **Step 1**
 
 - Obtain the url for init mp4 segment
