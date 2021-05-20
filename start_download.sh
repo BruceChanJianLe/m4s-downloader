@@ -39,7 +39,11 @@ then
     echo "Skipping segs downloading."
 else
     for i in $(seq $start_num $end_num); do
-        wget -O seg-$i.m4s $front$i$back
+        if [[ -s seg-$i.m4s ]]; then
+	    continue
+        else
+	    wget -O seg-$i.m4s $front$i$back
+        fi
     done
 fi
 
